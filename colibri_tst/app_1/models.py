@@ -17,7 +17,7 @@ class Employee(models.Model):
     years_of_experience = models.IntegerField(null=True, verbose_name="Year of experience")
 
     def __str__(self):
-        return f'Name:{self.first_name} - {self.last_name} - {self.date_of_birth}'
+        return f'Name:{self.first_name} - {self.last_name} - {self.email} - {self.date_of_birth}'
 
     class Meta:
         ordering = ['first_name','last_name','industry']
