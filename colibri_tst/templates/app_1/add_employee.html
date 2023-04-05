@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+
+{% extends 'app_1/base.html' %}
+
+{% block body_block %}
+
+<h3>welcome to add_user</h3>
+        <a href="{% url 'index' %}">Index page</a>
+        <a href="{% url 'app_1:relative_path' %}">Relative path page</a>
+        <a href="{% url 'admin:index' %}">Admin page</a>
+
+        <div class="container"> 
+                <form method="post" >
+                        {{ form.as_p }}
+                        {% csrf_token %}
+                        <input type="submit" value="Send">
+                </form>
+        </div>
+        
+{% endblock %}
+

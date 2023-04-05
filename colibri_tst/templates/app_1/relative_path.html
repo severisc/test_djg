@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends 'app_1/base.html' %}
+
+{% block body_block %}
+        <h3>welcome to RELATIVE PATH</h3>
+        <a href="{% url 'index' %}">Index page</a>
+        <a href="{% url 'app_1:add_employee' %}">Add page</a>
+        <a href="{% url 'admin:index' %}">Admin page</a>
+
+
+{% endblock %}

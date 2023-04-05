@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="{% static 'app_1/style.css' %}">
+    </head>
+    <body>
+        <h3>From BASE</h3>
+    
+        <div>
+            {% block body_block %}
+            {% endblock %}
+        </div>
+
+    </body>
+</html>
