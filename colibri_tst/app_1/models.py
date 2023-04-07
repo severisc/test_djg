@@ -17,7 +17,20 @@ class Employee(models.Model):
     years_of_experience = models.IntegerField(null=True, verbose_name="Year of experience")
 
     def __str__(self):
-        return f'Name:{self.first_name} - {self.last_name} - {self.email} - {self.date_of_birth}'
+        return f'Id:{self.id} -  Name:{self.first_name} - {self.last_name} - {self.email} - {self.industry} - {self.gender} - {self.date_of_birth}'
+
+    
+    # def update_employee(self, request.POST):
+    #     self.id = request.POST["id"]
+    #     self.first_name = request.POST["first_name"]
+    #     self.last_name = request.POST["last_name"]
+    #     self.gender = request.POST["gender"]
+    #     self.email = request.POST["email"]
+    #     self.date_of_birth = request.POST["date_of_birth"]
+    #     self.industry = request.POST["industry"]
+    #     self.salary = request.POST["salary"]
+    #     self.years_of_experience = request.POST["years_of_experience"]
+   
 
     class Meta:
         ordering = ['first_name','last_name','industry']

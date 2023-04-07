@@ -8,5 +8,6 @@ app_name = "app_1"
 
 urlpatterns = [    
     re_path(r'^relative', views.relative_path, name='relative_path'),
-    re_path(r'^add_employee', views.add_employee, name='add_employee')
+    re_path(r'^add_employee', views.add_employee, name='add_employee'),
+    re_path(r'^update', views.update_emp, name='update_emp')
 ]
