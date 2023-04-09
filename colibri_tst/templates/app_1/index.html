@@ -19,31 +19,33 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Gender</th>
                         <th>DoB</th>
                         <th>Salary</th>
                         <th>Industry</th>
                         <th>Years of experience</th>
-                        <th>Update</th>
-                        <th>Remove</th>
+                        <th></th>
+                        <th></th>
 
 
                 </tr>
                 {% for e in cntx.emp_all|slice:":20" %}
                 <tr>          
-                        {% comment %} <form method="POST" >
-                        {% csrf_token %} {% endcomment %}
+                        <form method="POST" >
+                        {% csrf_token %}
                         <td><input type="hidden" name="id" value={{e.id}} /></td>
                         <td><input type="text" name="first_name" value={{e.first_name}} /></td>
                         <td><input type="text" name="last_name" value={{e.last_name}} /></td>
                         <td><input type="text" name="email" value={{e.email}} /></td>
+                        <td><input type="text" name="gender" value={{e.gender}} /></td>
                         <td><input type="text" name="date_of_birth" value={{e.date_of_birth}} /></td>
                         <td><input type="text" name="salary" value={{e.salary}} /></td>
                         <td><input type="text" name="industry" value={{e.industry}} /></td>
                         <td><input type="text" name="years_of_experience" value={{e.years_of_experience}} /></td>
-                        {% comment %} <td><input type="submit" name="submit" value="Send"></td> {% endcomment %}
-                        <td><a href="{% url 'app_1:update_emp' %}/?id={{e.id}}">Update</a></td>
-                        <td><a href="/?id={{e.id}}">Delete</a></td>
-                        {% comment %} </form> {% endcomment %}                       
+                        <td><input type="submit" name="submit" value="Update"></td>
+                        {% comment %} <td><a href="{% url 'app_1:update_emp' %}/?id={{e.id}}">Update</a></td> {% endcomment %}
+                        <td><a href="/?id={{e.id}}">Del</a></td>
+                        </form>                       
 
                 </tr>
                 {% endfor %}
